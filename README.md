@@ -6,8 +6,8 @@
 4.npm start
 ```
 这个版本纯粹的用了react的props和state完成了两个父子组件之间的双向信息传递:便签组件(Note)包含一个编辑便签(EditPanel)的子组件
-主要代码：
 ```javascript
+//主要代码：
 import React,{Component} from 'react';
 import { render } from 'react-dom';
 class EditPanel extends Component{ //子组件
