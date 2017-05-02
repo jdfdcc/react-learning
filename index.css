@@ -1,0 +1,11 @@
+.note-item{
+	display: inline-block;
+	border: solid 1px #eee;
+	margin: 10px; 
+	padding: 10px;
+}
+.edit-panel{
+	position: fixed;
+	top: 15%;
+    left:30%;
+}
