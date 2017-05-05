@@ -1,18 +1,20 @@
 import React,{Component} from 'react';
 import { render } from 'react-dom';
-class EditPanel extends Component{
+import { connect } from 'react-redux';
+
+class EditPanel extends Component{ //子组件
   constructor(props){
      super(props);
      this.state=this.props.item;
      this.handleEditFinish=this.handleEditFinish.bind(this);
   }
-  handleEditFinish(e){
+  handleEditFinish(e){    
     var date=new Date();
     var newState={
       content:e.target.previousSibling.value,
       date:date.toLocaleDateString()     
     } 
-    this.props.onChange(newState);
+    this.props.onChange(newState);//回调函数传递参数给父组件
   }
   render(){
      return(
@@ -24,7 +26,7 @@ class EditPanel extends Component{
   }
 }
 
-class Note extends Component{
+class Note extends Component{ //父组件
   constructor(props){
      super(props);
      this.state={
@@ -34,7 +36,7 @@ class Note extends Component{
      }
      this.handleEdit=this.handleEdit.bind(this);
      this.handleDelete=this.handleDelete.bind(this);
-     this.handleChildChange=this.handleChildChange.bind(this);
+     this.handleChildChange=this.handleChildChange.bind(this); //监听子组件变化
   }
   handleChildChange(newState){
     if(newState){
