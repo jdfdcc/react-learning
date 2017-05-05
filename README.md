@@ -13,7 +13,7 @@ import React,{Component} from "react";
 import {Connect} from "react-redux";
 class Counter extends Component{
 	render(){
-		const {value,onIncrease,onDecrease}=this.props; //redux主张UI组件只负责展示，所以这里做了，解构props的操作
+		const {value,onIncrease,onDecrease}=this.props; //redux主张UI组件只负责展示，所以这里做了解构props的操作
 		return(
            <div>
              <p> you click the button: {value}  time!</p>
@@ -41,6 +41,7 @@ export default (state=0,action)=>{
 }
 ```
 ```javascript
+//index.js
 import React from 'react';
 import { render } from 'react-dom';
 import { createStore } from "redux";
